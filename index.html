@@ -10,12 +10,39 @@
 <meta property="og:description" content="Cartões, panfletos, banners, adesivos e brindes. Monte seu pedido e receba o orçamento no WhatsApp."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://kriarsoftware.github.io/multigrafica/"/>
-<meta property="og:image" content="https://kriarsoftware.github.io/multigrafica/fotos/01-cartoes-hm-16x10.webp"/>
+<meta property="og:image" content="https://kriarsoftware.github.io/multigrafica/fotos/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%23F7F6F3'/%3E%3Crect%20x='10'%20y='24'%20width='22'%20height='30'%20rx='2'%20fill='%2300AEEF'%20transform='rotate(-16%2021%2039)'/%3E%3Crect%20x='19'%20y='18'%20width='22'%20height='30'%20rx='2'%20fill='%23E6197A'%20transform='rotate(-6%2030%2033)'/%3E%3Crect%20x='29'%20y='13'%20width='22'%20height='30'%20rx='2'%20fill='%23F7C600'%20transform='rotate(6%2040%2028)'/%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="preload" as="image" href="fotos/01-cartoes-hm-16x10.webp" imagesrcset="fotos/01-cartoes-hm-16x10-sm.webp 800w, fotos/01-cartoes-hm-16x10.webp 1600w" imagesizes="(max-width:1120px) 100vw, 1040px" media="(min-width:601px)"/>
 <script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Multigráfica Jacareí",
+  "description": "Gráfica rápida em Jacareí com maquinário próprio: cartões de visita, panfletos, banners, adesivos, apostilas e personalizados.",
+  "url": "https://kriarsoftware.github.io/multigrafica/",
+  "image": "https://kriarsoftware.github.io/multigrafica/fotos/og-image.jpg",
+  "telephone": "+55 12 98175-9519",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Los Ângeles, 31 - Jardim California",
+    "addressLocality": "Jacareí",
+    "addressRegion": "SP",
+    "postalCode": "12305-800",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/multigrafica.jacarei/"]
+}
+</script>
 <style>
 /* ============ TOKENS ============ */
 :root{
@@ -157,6 +184,29 @@ button,input,select,textarea{font:inherit;color:inherit}
 .form-msg{font-size:.9rem;color:#9F2F2D;margin-top:.75rem;min-height:1.4em}
 .form-note{font-size:.85rem;color:var(--muted)}
 
+/* Avaliações */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.reviews blockquote{margin:0;border-top:1px solid var(--line);padding-top:1.5rem}
+.reviews p{font-family:var(--serif);font-size:clamp(1.5rem,1.2rem + 1vw,2rem);line-height:1.15;letter-spacing:-0.01em}
+.reviews cite{display:block;margin-top:1rem;font-style:normal;font-size:.9rem;color:var(--muted)}
+.score{display:flex;align-items:baseline;gap:.75rem}
+.score b{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,2rem + 3vw,4.5rem);line-height:1;letter-spacing:-0.02em}
+.score span{color:var(--muted);font-size:.95rem;line-height:1.4}
+.stars{color:#E8A317;letter-spacing:.1em}
+
+/* Onde estamos */
+.visit{display:grid;grid-template-columns:5fr 7fr;gap:clamp(2rem,6vw,5rem);align-items:stretch}
+.visit h2{font-size:clamp(2.25rem,1.5rem + 3vw,3.75rem);margin-bottom:1.5rem}
+.visit address{font-style:normal;font-size:1.125rem;line-height:1.5}
+.visit dl{margin:1.75rem 0 2rem;border-top:1px solid var(--line)}
+.visit dl div{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line);font-size:.975rem}
+.visit dt{color:var(--muted)}
+.visit dd{margin:0;font-weight:500}
+.visit .acts{display:flex;flex-wrap:wrap;gap:.75rem}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#eceae5;min-height:380px;position:relative}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05) brightness(1.02)}
+.map a{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:.95rem}
+
 /* Rodapé */
 footer{margin-top:var(--section);border-top:1px solid var(--line)}
 .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;padding-block:3.5rem 2.5rem}
@@ -189,7 +239,8 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
   .c1,.c4{grid-column:span 2}
   .c2,.c3{grid-column:span 1}
   .c2 .card__img,.c3 .card__img{aspect-ratio:4/5;flex:none;min-height:0}
-  .order{grid-template-columns:1fr}
+  .order,.visit{grid-template-columns:1fr}
+  .reviews{grid-template-columns:1fr;gap:1.5rem}
   .foot{grid-template-columns:1fr 1fr}
   .foot > div:first-child{grid-column:1/-1}
 }
@@ -208,6 +259,8 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
   .steps{grid-template-columns:1fr;gap:1.75rem}
   .pair{grid-template-columns:1fr}
   .contacts b{font-size:.925rem}
+  .map{min-height:300px}
+  .visit .acts .btn{flex:1 1 100%}
   .foot{grid-template-columns:1fr}
 }
 </style>
@@ -228,6 +281,7 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
       <a href="#produtos">Produtos</a>
       <a href="#trabalhos">Trabalhos</a>
       <a href="#como">Como funciona</a>
+      <a href="#visite">Endereço</a>
       <a class="btn" href="#pedido">Pedir orçamento</a>
     </nav>
   </div>
@@ -239,7 +293,7 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
   <section class="hero wrap">
     <h1 class="serif" data-r>Impressão rápida, <em>feita com cuidado.</em></h1>
     <div class="hero__row">
-      <p data-r style="--i:1">Gráfica em Jacareí para cartões, panfletos, banners, adesivos e brindes. Cartão de visita e panfleto podem ficar prontos no mesmo dia.</p>
+      <p data-r style="--i:1">Gráfica com maquinário próprio em Jacareí, para cartões, panfletos, banners, adesivos e brindes. Cartão de visita e panfleto podem ficar prontos no mesmo dia.</p>
       <div class="hero__acts" data-r style="--i:2">
         <a class="btn" href="#pedido">Montar pedido</a>
         <a class="btn btn--ghost" href="https://wa.me/5512981759519?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a>
@@ -247,13 +301,13 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
     </div>
     <figure class="hero__img" data-r style="--i:3">
       <picture>
-        <source media="(max-width:600px)" srcset="fotos/01-cartoes-hm-4x5.webp" width="1200" height="1500"/>
-        <img src="fotos/01-cartoes-hm-16x10.webp" width="1600" height="1000" alt="Cartões de visita pretos e dourados da HM Construções em uma caixa"/>
+        <source media="(max-width:600px)" srcset="fotos/01-cartoes-hm-4x5-sm.webp 600w, fotos/01-cartoes-hm-4x5.webp 1200w" sizes="100vw" width="1200" height="1500"/>
+        <img src="fotos/01-cartoes-hm-16x10.webp" srcset="fotos/01-cartoes-hm-16x10-sm.webp 800w, fotos/01-cartoes-hm-16x10.webp 1600w" sizes="(max-width:1120px) 100vw, 1040px" fetchpriority="high" width="1600" height="1000" alt="Cartões de visita pretos e dourados da HM Construções em uma caixa"/>
       </picture>
     </figure>
     <ul class="facts">
       <li data-r><b>Mesmo dia</b><span>para cartão de visita e panfleto</span></li>
-      <li data-r style="--i:1"><b>Produção local</b><span>impresso aqui em Jacareí</span></li>
+      <li data-r style="--i:1"><b>Nota 5,0 no Google</b><span>em 90 avaliações de clientes</span></li>
       <li data-r style="--i:2"><b>Orçamento no WhatsApp</b><span>o pedido chega organizado</span></li>
     </ul>
   </section>
@@ -266,20 +320,20 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
     </div>
     <div class="bento">
       <article class="card c1" data-r>
-        <div class="card__img"><img src="fotos/02-cartoes-bem-garota-4x5.webp" width="1200" height="1500" alt="Cartões de visita da Bem Garota Makes" loading="lazy"/></div>
-        <div class="card__body"><h3>Cartões e papelaria <span class="tag">Mesmo dia</span></h3><p>Cartão de visita, verniz localizado, voucher, bloco autocopiativo e marcador de página.</p></div>
+        <div class="card__img"><img src="fotos/02-cartoes-bem-garota-4x5.webp" srcset="fotos/02-cartoes-bem-garota-4x5-sm.webp 600w, fotos/02-cartoes-bem-garota-4x5.webp 1200w" sizes="(max-width:600px) 100vw, (max-width:880px) 100vw, 690px" width="1200" height="1500" alt="Cartões de visita da Bem Garota Makes" loading="lazy"/></div>
+        <div class="card__body"><h3>Cartões e papelaria <span class="tag">Mesmo dia</span></h3><p>Cartão de visita, convites, apostilas, voucher, bloco autocopiativo e marcador de página.</p></div>
       </article>
       <article class="card c2" data-r style="--i:1">
-        <div class="card__img"><img src="fotos/11-panfletos-black-decor-4x5.webp" width="1200" height="1500" alt="Panfletos da Black Decor" loading="lazy"/></div>
-        <div class="card__body"><h3>Divulgação</h3><p>Panfletos, folders, banners, faixas e fachadas em lona.</p></div>
+        <div class="card__img"><img src="fotos/11-panfletos-black-decor-4x5.webp" srcset="fotos/11-panfletos-black-decor-4x5-sm.webp 600w, fotos/11-panfletos-black-decor-4x5.webp 1200w" sizes="(max-width:600px) 100vw, (max-width:880px) 50vw, 340px" width="1200" height="1500" alt="Panfletos da Black Decor" loading="lazy"/></div>
+        <div class="card__body"><h3>Divulgação</h3><p>Panfletos, folders, banners, faixas, lonas e adesivagem de fachada.</p></div>
       </article>
       <article class="card c3" data-r>
-        <div class="card__img"><img src="fotos/09-adesivos-redondos-4x5.webp" width="1200" height="1500" alt="Adesivos redondos da Alfa Sports Shop" loading="lazy"/></div>
+        <div class="card__img"><img src="fotos/09-adesivos-redondos-4x5.webp" srcset="fotos/09-adesivos-redondos-4x5-sm.webp 600w, fotos/09-adesivos-redondos-4x5.webp 1200w" sizes="(max-width:600px) 100vw, (max-width:880px) 50vw, 340px" width="1200" height="1500" alt="Adesivos redondos da Alfa Sports Shop" loading="lazy"/></div>
         <div class="card__body"><h3>Adesivos e etiquetas</h3><p>Redondos, recortados, à prova d'água e etiqueta escolar.</p></div>
       </article>
       <article class="card c4" data-r style="--i:1">
-        <div class="card__img"><img src="fotos/05-coqueteleiras-16x10.webp" width="1600" height="1000" alt="Coqueteleiras personalizadas CT Start Power" loading="lazy"/></div>
-        <div class="card__body"><h3>Personalizados</h3><p>Coqueteleiras, canecas, camisetas, sacolas, agendas e cordões de crachá.</p></div>
+        <div class="card__img"><img src="fotos/05-coqueteleiras-16x10.webp" srcset="fotos/05-coqueteleiras-16x10-sm.webp 800w, fotos/05-coqueteleiras-16x10.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:880px) 100vw, 690px" width="1600" height="1000" alt="Coqueteleiras personalizadas CT Start Power" loading="lazy"/></div>
+        <div class="card__body"><h3>Personalizados</h3><p>Coqueteleiras, canecas, camisetas, sacolas, agendas, Bíblias e cordões de crachá.</p></div>
       </article>
     </div>
     <p class="more">Não achou o que precisa? <a class="link" href="https://wa.me/5512981759519?text=Ol%C3%A1!%20Preciso%20de%20um%20produto%20que%20n%C3%A3o%20est%C3%A1%20no%20site." target="_blank" rel="noopener">Pergunte no WhatsApp</a>.</p>
@@ -292,12 +346,25 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
       <a class="link" href="https://www.instagram.com/multigrafica.jacarei/" target="_blank" rel="noopener" data-r style="--i:1">Ver mais no Instagram</a>
     </div>
     <div class="gallery">
-      <figure data-r><div class="ph"><img src="fotos/04-sacola-joias-4x5.webp" width="1200" height="1500" alt="Sacola preta com o logo da N Jóias" loading="lazy"/></div><figcaption>N Jóias <span>· Sacolas</span></figcaption></figure>
-      <figure data-r style="--i:1"><div class="ph"><img src="fotos/06-agenda-leao-1x1.webp" width="1200" height="1200" alt="Agenda com capa personalizada de leão" loading="lazy"/></div><figcaption>Agenda personalizada <span>· Capa com nome</span></figcaption></figure>
-      <figure data-r style="--i:2"><div class="ph"><img src="fotos/07-cartoes-garante-1x1.webp" width="1200" height="1200" alt="Adesivos recortados da Garante Motors" loading="lazy"/></div><figcaption>Garante Motors <span>· Adesivos</span></figcaption></figure>
-      <figure data-r><div class="ph"><img src="fotos/10-cordoes-semear-1x1.webp" width="1200" height="1200" alt="Crachás com cordão da Equipe Semear" loading="lazy"/></div><figcaption>Instituto Semear <span>· Crachás</span></figcaption></figure>
-      <figure data-r style="--i:1"><div class="ph"><img src="fotos/08-camiseta-arraia-1x1.webp" width="1200" height="1200" alt="Camiseta infantil do Arraiá dos Amigos" loading="lazy"/></div><figcaption>Arraiá dos Amigos <span>· Camiseta</span></figcaption></figure>
-      <figure data-r style="--i:2"><div class="ph"><img src="fotos/12-marcador-pagina-1x1.webp" width="1200" height="1200" alt="Marcador de página de livro" loading="lazy"/></div><figcaption>Lançamento de livro <span>· Marcador</span></figcaption></figure>
+      <figure data-r><div class="ph"><img src="fotos/04-sacola-joias-4x5.webp" srcset="fotos/04-sacola-joias-4x5-sm.webp 600w, fotos/04-sacola-joias-4x5.webp 1200w" sizes="(max-width:600px) 72vw, 340px" width="1200" height="1500" alt="Sacola preta com o logo da N Jóias" loading="lazy"/></div><figcaption>N Jóias <span>· Sacolas</span></figcaption></figure>
+      <figure data-r style="--i:1"><div class="ph"><img src="fotos/06-agenda-leao-1x1.webp" srcset="fotos/06-agenda-leao-1x1-sm.webp 600w, fotos/06-agenda-leao-1x1.webp 1200w" sizes="(max-width:600px) 72vw, 340px" width="1200" height="1200" alt="Agenda com capa personalizada de leão" loading="lazy"/></div><figcaption>Agenda personalizada <span>· Capa com nome</span></figcaption></figure>
+      <figure data-r style="--i:2"><div class="ph"><img src="fotos/07-cartoes-garante-1x1.webp" srcset="fotos/07-cartoes-garante-1x1-sm.webp 600w, fotos/07-cartoes-garante-1x1.webp 1200w" sizes="(max-width:600px) 72vw, 340px" width="1200" height="1200" alt="Adesivos recortados da Garante Motors" loading="lazy"/></div><figcaption>Garante Motors <span>· Adesivos</span></figcaption></figure>
+      <figure data-r><div class="ph"><img src="fotos/10-cordoes-semear-1x1.webp" srcset="fotos/10-cordoes-semear-1x1-sm.webp 600w, fotos/10-cordoes-semear-1x1.webp 1200w" sizes="(max-width:600px) 72vw, 340px" width="1200" height="1200" alt="Crachás com cordão da Equipe Semear" loading="lazy"/></div><figcaption>Instituto Semear <span>· Crachás</span></figcaption></figure>
+      <figure data-r style="--i:1"><div class="ph"><img src="fotos/08-camiseta-arraia-1x1.webp" srcset="fotos/08-camiseta-arraia-1x1-sm.webp 600w, fotos/08-camiseta-arraia-1x1.webp 1200w" sizes="(max-width:600px) 72vw, 340px" width="1200" height="1200" alt="Camiseta infantil do Arraiá dos Amigos" loading="lazy"/></div><figcaption>Arraiá dos Amigos <span>· Camiseta</span></figcaption></figure>
+      <figure data-r style="--i:2"><div class="ph"><img src="fotos/12-marcador-pagina-1x1.webp" srcset="fotos/12-marcador-pagina-1x1-sm.webp 600w, fotos/12-marcador-pagina-1x1.webp 1200w" sizes="(max-width:600px) 72vw, 340px" width="1200" height="1200" alt="Marcador de página de livro" loading="lazy"/></div><figcaption>Lançamento de livro <span>· Marcador</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section class="section wrap" id="avaliacoes">
+    <div class="head">
+      <div class="score" data-r><b>5,0</b><span><span class="stars" aria-hidden="true">★★★★★</span><br/>90 avaliações no Google</span></div>
+      <a class="link" href="https://www.google.com/maps/search/?api=1&query=Multigr%C3%A1fica+Jacare%C3%AD+R.+Los+%C3%82ngeles+31" target="_blank" rel="noopener" data-r style="--i:1">Ver todas no Google</a>
+    </div>
+    <div class="reviews">
+      <blockquote data-r><p>“Qualidade, atendimento top, preço justo, entrega no prazo.”</p><cite>Avaliação no Google</cite></blockquote>
+      <blockquote data-r style="--i:1"><p>“Ótimo serviço, pessoal muito atencioso e muito rápidos.”</p><cite>Avaliação no Google</cite></blockquote>
+      <blockquote data-r style="--i:2"><p>“A gráfica superou minhas expectativas em todos os aspectos.”</p><cite>Avaliação no Google</cite></blockquote>
     </div>
   </section>
 
@@ -322,7 +389,7 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
         <div class="contacts" data-r style="--i:2">
           <a href="https://wa.me/5512981759519?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><span>WhatsApp</span><b>(12) 98175-9519</b></a>
           <a href="https://wa.me/5512982025825?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><span>WhatsApp</span><b>(12) 98202-5825</b></a>
-          <div><span>Horário</span><b>Seg–Sex 8h–18h · Sáb 8h–13h</b></div>
+          <div><span>Horário</span><b>Seg–Sex 9h–18h · Sáb 9h–12h</b></div>
         </div>
       </div>
 
@@ -372,6 +439,29 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
     </div>
   </section>
 
+  <!-- ONDE ESTAMOS -->
+  <section class="section wrap" id="visite">
+    <div class="visit">
+      <div>
+        <h2 class="serif" data-r>Venha nos visitar</h2>
+        <address data-r style="--i:1">R. Los Ângeles, 31<br/>Jardim Califórnia, Jacareí – SP<br/>CEP 12305-800</address>
+        <dl data-r style="--i:2">
+          <div><dt>Segunda a sexta</dt><dd>9h às 18h</dd></div>
+          <div><dt>Sábado</dt><dd>9h às 12h</dd></div>
+          <div><dt>Domingo</dt><dd>Fechado</dd></div>
+        </dl>
+        <div class="acts" data-r style="--i:3">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=R.+Los+%C3%82ngeles%2C+31+-+Jardim+California%2C+Jacare%C3%AD+-+SP%2C+12305-800" target="_blank" rel="noopener">Como chegar</a>
+          <a class="btn btn--ghost" href="tel:+5512981759519">Ligar</a>
+        </div>
+      </div>
+      <div class="map" data-r style="--i:1">
+        <a href="https://www.google.com/maps/search/?api=1&query=Multigr%C3%A1fica+Jacare%C3%AD+R.+Los+%C3%82ngeles+31" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        <iframe title="Mapa: Multigráfica Jacareí, R. Los Ângeles, 31" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=R.%20Los%20%C3%82ngeles%2C%2031%20-%20Jardim%20California%2C%20Jacare%C3%AD%20-%20SP%2C%2012305-800&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -390,9 +480,9 @@ footer{margin-top:var(--section);border-top:1px solid var(--line)}
     <div>
       <h3>Visite</h3>
       <ul>
-        <li><a href="https://www.google.com/maps/search/MultiGr%C3%A1fica+Jacare%C3%AD" target="_blank" rel="noopener">Jacareí, SP</a></li>
-        <li>Seg a sex, 8h às 18h</li>
-        <li>Sábado, 8h às 13h</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Multigr%C3%A1fica+Jacare%C3%AD+R.+Los+%C3%82ngeles+31" target="_blank" rel="noopener">R. Los Ângeles, 31<br/>Jardim Califórnia, Jacareí</a></li>
+        <li>Seg a sex, 9h às 18h</li>
+        <li>Sábado, 9h às 12h</li>
       </ul>
     </div>
   </div>
