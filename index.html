@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="theme-color" content="#000000"/>
+<meta name="theme-color" content="#F7F6F3"/>
 <title>MultiGráfica Jacareí | Gráfica rápida e personalizados</title>
 <meta name="description" content="Gráfica rápida em Jacareí: cartão de visita no mesmo dia, panfletos, banners, adesivos, sacolas e brindes personalizados. Monte o pedido no site e receba o orçamento pelo WhatsApp."/>
 <meta property="og:title" content="MultiGráfica Jacareí — impressão e personalização"/>
@@ -11,289 +11,205 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://kriarsoftware.github.io/multigrafica/"/>
 <meta property="og:image" content="https://kriarsoftware.github.io/multigrafica/fotos/01-cartoes-hm-16x10.webp"/>
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%23000'/%3E%3Crect%20x='10'%20y='24'%20width='22'%20height='30'%20fill='%2300AEEF'%20transform='rotate(-16%2021%2039)'/%3E%3Crect%20x='19'%20y='18'%20width='22'%20height='30'%20fill='%23E6197A'%20transform='rotate(-6%2030%2033)'/%3E%3Crect%20x='29'%20y='13'%20width='22'%20height='30'%20fill='%23F7C600'%20transform='rotate(6%2040%2028)'/%3E%3C/svg%3E"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%23F7F6F3'/%3E%3Crect%20x='10'%20y='24'%20width='22'%20height='30'%20rx='2'%20fill='%2300AEEF'%20transform='rotate(-16%2021%2039)'/%3E%3Crect%20x='19'%20y='18'%20width='22'%20height='30'%20rx='2'%20fill='%23E6197A'%20transform='rotate(-6%2030%2033)'/%3E%3Crect%20x='29'%20y='13'%20width='22'%20height='30'%20rx='2'%20fill='%23F7C600'%20transform='rotate(6%2040%2028)'/%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
 <script>document.documentElement.classList.add('js')</script>
 <style>
-/* ============ TOKENS — as quatro tintas da marca ============ */
+/* ============ TOKENS ============ */
 :root{
-  --bg:#ffffff;
-  --surface:#f3f3f3;
-  --ink:#000000;
-  --muted:#4d4d4d;
-  --c:#00AEEF;  --c-soft:#7fd6f7;
-  --m:#E6197A;
-  --y:#F7C600;
-  --k:#000000;
-  --accent:#F7C600; --accent-ink:#000000;
+  --bg:#F7F6F3;
+  --surface:#FFFFFF;
+  --ink:#111111;
+  --muted:#787774;
+  --line:#EAEAEA;
+  --tag:#FBF3DB; --tag-ink:#956400;
   --wa:#25D366;
 
-  --font-display:'Libre Franklin',system-ui,sans-serif;
-  --font-text:'Source Serif 4',Georgia,serif;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Geist','Helvetica Neue',system-ui,sans-serif;
 
-  --step-small:clamp(0.8125rem,0.79rem + 0.1vw,0.875rem);
-  --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
-  --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
-  --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
-  --step-display:clamp(2.75rem,0.4rem + 5.6vw,6.5rem);
-
-  --margin:clamp(1rem,2.8vw,2.5rem);
-  --gutter:clamp(1rem,2vw,2rem);
-  --section:clamp(6rem,12vw,12rem);
-  --radius:0px;
-
-  --ease-out:cubic-bezier(0.22,1,0.36,1);
-  --ease-in-out:cubic-bezier(0.76,0,0.24,1);
-  --t-press:140ms; --t-hover:180ms; --t-ui:240ms; --t-reveal:800ms;
+  --max:1120px;
+  --pad:clamp(1.25rem,4vw,2.5rem);
+  --section:clamp(5rem,11vw,9rem);
+  --r:12px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
 }
 
-/* ============ RESET ============ */
+/* ============ BASE ============ */
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-text);font-size:var(--step-body);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3,p,figure,ul,ol{margin:0}
-ul[class],ol[class]{padding:0;list-style:none}
-img,svg{display:block;max-width:100%}
-img{height:auto}
+ul,ol{padding:0;list-style:none}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit;color:inherit}
-button{background:none;border:0;padding:0;cursor:pointer}
-a{color:inherit}
-:target{scroll-margin-top:5rem}
-::selection{background:var(--y);color:#000}
-:focus-visible{outline:3px solid var(--m);outline-offset:3px}
-h1,h2,h3{font-family:var(--font-display);font-weight:700;letter-spacing:-0.035em;line-height:0.98;text-wrap:balance}
-p{max-width:62ch;text-wrap:pretty}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.wrap{padding-inline:var(--margin)}
-.ic{width:1.15em;height:1.15em;flex:none;fill:currentColor}
+::selection{background:#111;color:#fff}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;line-height:1.05}
+.ic{width:1.1em;height:1.1em;fill:currentColor;flex:none}
 
-/* ============ BOTÕES E LINKS ============ */
-.button{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.25rem;padding:0 1.5rem;background:var(--accent);color:var(--accent-ink);font-family:var(--font-display);font-size:var(--step-body);letter-spacing:-0.01em;text-decoration:none;border-radius:var(--radius);white-space:nowrap;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease,color var(--t-hover) ease}
-.button:active{transform:scale(0.97)}
-.button--ink{background:var(--k);color:#fff}
-.button--wa{background:var(--wa);color:#000}
-.link{text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.22em;text-decoration-thickness:.07em;transition:text-decoration-color var(--t-hover) ease}
-@media (hover:hover) and (pointer:fine){
-  .link:hover{text-decoration-color:currentColor}
-  .button:hover{background:var(--k);color:#fff}
-  .button--ink:hover{background:var(--m);color:#000}
-  .button--wa:hover{background:#000;color:#fff}
-}
+/* ============ BOTÕES ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3rem;padding:0 1.35rem;border-radius:6px;font-size:.975rem;font-weight:500;background:var(--ink);color:#fff;border:1px solid var(--ink);cursor:pointer;transition:background-color .2s ease,border-color .2s ease,transform .15s ease}
+.btn:hover{background:#333;border-color:#333}
+.btn:active{transform:scale(.98)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:#dcdbd7}
+.btn--ghost:hover{background:var(--surface);border-color:#cfcecb}
+.link{border-bottom:1px solid transparent;transition:border-color .2s ease}
+.link:hover{border-color:currentColor}
 
 /* ============ NAV ============ */
-.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:4.25rem;padding-inline:var(--margin);background:var(--bg);transition:transform var(--t-ui) var(--ease-out)}
-.nav.is-hidden{transform:translateY(-100%)}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--font-display);font-size:var(--step-body);letter-spacing:-0.02em}
-.mark{position:relative;width:28px;height:30px;flex:none}
-.mark i{position:absolute;width:15px;height:20px;left:6px;top:5px}
-.mark i:nth-child(1){background:var(--c);rotate:-16deg;translate:-5px 2px}
-.mark i:nth-child(2){background:var(--m);rotate:-6deg;translate:-1px 0}
-.mark i:nth-child(3){background:var(--y);rotate:6deg;translate:4px -2px}
-.nav-links{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2rem);font-size:var(--step-small)}
-.nav-links a{text-decoration:none;font-family:var(--font-display);font-size:var(--step-body);letter-spacing:-0.01em}
-.nav-links .button{min-height:2.75rem;padding:0 1.1rem}
-.menu-btn{display:none;font-family:var(--font-display);font-size:var(--step-body);min-height:2.75rem;padding:0 .25rem}
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.86);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s ease}
+.nav.is-scrolled{border-bottom-color:var(--line)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;height:4.25rem}
+.brand{display:flex;align-items:center;gap:.65rem;font-weight:600;font-size:1rem;letter-spacing:-0.01em}
+.mark{position:relative;width:24px;height:26px;flex:none}
+.mark i{position:absolute;width:13px;height:18px;left:5px;top:4px;border-radius:2px}
+.mark i:nth-child(1){background:#00AEEF;rotate:-16deg;translate:-4px 2px}
+.mark i:nth-child(2){background:#E6197A;rotate:-6deg;translate:-1px 0}
+.mark i:nth-child(3){background:#F7C600;rotate:6deg;translate:3px -2px}
+.nav__links{display:flex;align-items:center;gap:2rem;font-size:.95rem}
+.nav__links a:not(.btn){color:var(--muted);transition:color .2s ease}
+.nav__links a:not(.btn):hover{color:var(--ink)}
+.nav__links .btn{min-height:2.5rem;padding:0 1rem}
 
-/* ============ HERO + CATÁLOGO (história fixa) ============ */
-.story{display:grid;grid-template-columns:1fr 1fr;align-items:start}
-.story__text{padding:0 var(--margin)}
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:2.5rem;padding-top:6rem}
-.hero h1{font-size:var(--step-display);line-height:.92;margin-bottom:1.5rem}
-.hero p{font-size:var(--step-lead);line-height:1.4;max-width:30ch;margin-bottom:2rem}
-.hero .acts{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
-.hero .acts .link{font-family:var(--font-display);font-size:var(--step-body);padding:.5rem .25rem}
+/* ============ HERO ============ */
+.hero{padding-top:clamp(3.5rem,9vw,7rem)}
+.hero h1{font-size:clamp(2.9rem,1.6rem + 5.4vw,6rem);max-width:17ch}
+.hero h1 em{font-style:italic;color:var(--muted)}
+.hero__row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem;margin-top:2rem}
+.hero__row p{max-width:38ch;font-size:1.125rem;color:var(--muted)}
+.hero__acts{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero__img{margin-top:clamp(2.5rem,6vw,4.5rem);border-radius:var(--r);overflow:hidden;background:#e9e7e2}
+.hero__img img{width:100%;aspect-ratio:16/9;object-fit:cover;filter:saturate(.88)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:1.75rem;border-top:1px solid var(--line)}
+.facts li{padding:1.25rem 1.5rem 0 0;font-size:.95rem}
+.facts li + li{padding-left:1.5rem;border-left:1px solid var(--line)}
+.facts b{display:block;font-weight:500}
+.facts span{color:var(--muted)}
 
-.stage{position:sticky;top:0;height:100svh;background:var(--k);color:#fff;display:grid;place-items:center;overflow:hidden}
-.stage__top{position:absolute;top:1.6rem;right:var(--margin);font-family:var(--font-display);font-size:var(--step-body);text-decoration:none;color:#fff;z-index:2}
-.specimen{width:min(40vw,calc(100svh - 15rem));margin-top:3rem}
-.specimen__tile{position:relative;aspect-ratio:1;background:var(--y);transition:background-color 600ms var(--ease-in-out)}
-.specimen__tile img{position:absolute;inset:10%;width:80%;height:80%;object-fit:cover;opacity:0;transition:opacity 600ms var(--ease-in-out),transform 900ms var(--ease-out);transform:scale(1.04)}
-.specimen__tile img.is-on{opacity:1;transform:none}
-.specimen__cap{margin-top:1rem;font-size:var(--step-small);min-height:2.9em}
-.specimen__cap b{display:block;font-family:var(--font-display);font-weight:700;font-size:var(--step-body);letter-spacing:-0.01em}
-.inks{position:absolute;bottom:1.6rem;left:var(--margin);right:var(--margin);display:flex;gap:6px}
-.inks i{flex:1;height:10px;background:var(--c);opacity:.28;transition:opacity 400ms ease}
-.inks i:nth-child(2){background:var(--m)}
-.inks i:nth-child(3){background:var(--y)}
-.inks i:nth-child(4){background:#fff}
-.inks i.is-on{opacity:1}
+/* ============ SEÇÕES ============ */
+.section{padding-top:var(--section)}
+.head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem 2rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.head h2{font-size:clamp(2.25rem,1.5rem + 3vw,3.75rem);max-width:14ch}
+.head p{max-width:36ch;color:var(--muted)}
 
-.cat{padding-top:var(--section)}
-.cat:last-child{padding-bottom:var(--section)}
-.cat__head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:2.5rem}
-.cat__head h2{font-size:var(--step-head)}
-.cat__head span{font-size:var(--step-body);color:var(--muted);white-space:nowrap}
-.cat__intro{font-size:var(--step-lead);line-height:1.4;max-width:30ch;margin:-1rem 0 2.5rem}
-.items{display:grid;gap:2rem}
-.item{display:grid;grid-template-columns:64px 1fr;gap:1.25rem;align-items:start}
-.item img{width:64px;height:64px;object-fit:cover}
-.item h3{display:flex;justify-content:space-between;gap:1rem;font-size:var(--step-body);letter-spacing:-0.01em;line-height:1.25;margin:.15rem 0 .35rem}
-.item h3 em{font-style:normal;flex:none;background:var(--y);padding:.1rem .45rem;font-size:var(--step-small);letter-spacing:0;align-self:center}
-.item p{color:var(--muted);max-width:40ch}
-.cat__pic{display:none}
-.chip{width:64px;height:64px;display:block}
+/* Produtos — bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s ease}
+.card:hover{box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.card__img{background:#eceae5;overflow:hidden}
+.card__img img{width:100%;height:100%;object-fit:cover;filter:saturate(.88);transition:transform .8s var(--ease)}
+.card:hover .card__img img{transform:scale(1.03)}
+.card__body{padding:1.5rem 1.6rem 1.7rem}
+.card h3{font-size:1.125rem;font-weight:500;letter-spacing:-0.01em;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.card p{color:var(--muted);font-size:.95rem;margin-top:.4rem}
+.tag{display:inline-block;background:var(--tag);color:var(--tag-ink);border-radius:999px;font-size:.6875rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.2rem .6rem}
+.c1{grid-column:span 4}.c2{grid-column:span 2}.c3{grid-column:span 2}.c4{grid-column:span 4}
+.c1 .card__img,.c4 .card__img{aspect-ratio:16/9}
+.c2 .card__img,.c3 .card__img{flex:1;min-height:220px}
+.more{margin-top:1.5rem;color:var(--muted);font-size:.95rem}
+.more a{color:var(--ink)}
 
-/* ============ TRABALHOS ============ */
-.work{padding-block:var(--section);overflow:hidden}
-.work__intro{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);margin-bottom:clamp(4rem,8vw,8rem)}
-.work__intro h2{grid-column:1/8;font-size:var(--step-head)}
-.work__intro p{grid-column:9/13;align-self:end;font-size:var(--step-lead);line-height:1.4}
-.job{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);align-items:end}
-.job + .job{margin-top:140px}
-.job__big{grid-column:1/8;margin-left:calc(var(--margin) * -1);height:80svh;overflow:hidden;background:var(--c)}
-.job:nth-of-type(2) .job__big{height:64svh;background:var(--m)}
-.job:nth-of-type(3) .job__big{height:90svh;background:var(--y)}
-.job__big img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transform-origin:center}
-.job__side{grid-column:9/13}
-.job__side img{width:100%;aspect-ratio:16/10;object-fit:cover}
-.job__meta{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.75rem}
-.job__meta h3{font-size:var(--step-lead);line-height:1.05}
-.job__meta p{font-size:var(--step-small);line-height:1.5;color:var(--muted)}
-.work__more{margin-top:clamp(4rem,8vw,7rem);display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem}
-.work__more p{font-size:var(--step-lead);line-height:1.4;max-width:32ch}
+/* Trabalhos */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 1rem}
+.gallery figure{display:flex;flex-direction:column;gap:.7rem}
+.gallery .ph{border-radius:var(--r);overflow:hidden;background:#eceae5;aspect-ratio:4/5}
+.gallery img{width:100%;height:100%;object-fit:cover;filter:saturate(.88);transition:transform .8s var(--ease)}
+.gallery figure:hover img{transform:scale(1.03)}
+.gallery figcaption{font-size:.925rem}
+.gallery figcaption span{color:var(--muted)}
 
-/* ============ COMO FUNCIONA ============ */
-.how{padding-block:var(--section) calc(var(--section) * .6);background:var(--surface)}
-.how__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px;align-items:end}
-.how__head{grid-column:1/8;grid-row:1;align-self:start;font-size:var(--step-head);max-width:9ch}
-.stage-tile{position:relative;overflow:hidden}
-.stage-tile img{position:absolute;inset:12%;width:76%;height:76%;object-fit:cover}
-.st1{grid-column:1/4;grid-row:2;height:30vh;background:var(--c)}
-.st2{grid-column:4/8;grid-row:2;height:44vh;background:var(--m)}
-.st3{grid-column:8/13;grid-row:1/3;height:60vh;background:var(--y)}
-.how__text{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px;margin-top:1.5rem}
-.how__text div:nth-child(1){grid-column:1/4}
-.how__text div:nth-child(2){grid-column:4/8}
-.how__text div:nth-child(3){grid-column:8/13}
-.how__text h3{font-size:var(--step-lead);letter-spacing:-0.02em;margin-bottom:.4rem}
-.how__text p{max-width:34ch}
+/* Como funciona */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.steps li{border-top:1px solid var(--ink);padding-top:1.25rem}
+.steps h3{font-family:var(--serif);font-weight:400;font-size:1.75rem;letter-spacing:-0.01em;line-height:1.1;margin-bottom:.5rem}
+.steps p{color:var(--muted);max-width:32ch}
 
-/* ============ PEDIDO (cupom) ============ */
-.order{padding-block:var(--section)}
-.order__intro{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);margin-bottom:3rem}
-.order__intro h2{grid-column:2/7;font-size:var(--step-head)}
-.order__intro p{grid-column:7/12;align-self:end;font-size:var(--step-lead);line-height:1.4;max-width:36ch}
-.coupon{--notch:28px;position:relative;width:calc(100% * 10 / 12);margin-inline:auto;background:var(--c);color:#000;display:grid;grid-template-columns:46% 54%;
-  -webkit-mask:radial-gradient(circle var(--notch) at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--notch) at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat; /* taste-skill-ignore: recorte do cupom/postal, não é preenchimento; botão flutuante */
-          mask:radial-gradient(circle var(--notch) at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--notch) at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat} /* taste-skill-ignore: recorte do cupom/postal, não é preenchimento; botão flutuante */
-.coupon__left{padding:3rem;display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem}
-.coupon__left h3{font-size:var(--step-head);text-transform:uppercase;line-height:.92}
-.coupon__left > p{max-width:30ch}
-.coupon__right{padding:3rem;border-left:5px dotted var(--bg)}
-/* cartão ao vivo */
-.livecard{position:relative;aspect-ratio:9/5;width:100%;max-width:420px;background:var(--k);color:#fff;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between;transition:background-color 400ms ease,color 400ms ease;transform:rotate(-2deg);margin:6px}
-.livecard[data-tone="claro"]{background:#fff;color:#000}
-.livecard[data-tone="amarelo"]{background:var(--y);color:#000}
-.livecard[data-tone="magenta"]{background:var(--m);color:#000}
-.livecard__co{font-family:var(--font-display);font-size:clamp(1.25rem,1.1rem + 0.9vw,1.75rem);letter-spacing:-0.03em;line-height:1;overflow-wrap:anywhere}
-.livecard__name{font-size:var(--step-small);line-height:1.4}
-.livecard__name b{display:block;font-weight:600;font-size:var(--step-body)}
-.livecard .mark{position:absolute;top:8%;right:7%}
-.livecard__note{font-size:var(--step-small);margin-top:.9rem}
-.tones{display:flex;gap:.5rem;margin-top:1rem}
-.tones button{width:2.75rem;height:2.75rem;background:var(--k);transition:transform var(--t-press) var(--ease-out)}
-.tones button:active{transform:scale(.92)}
-.tones button[aria-pressed="true"]{outline:3px solid #000;outline-offset:3px}
-.tones button[data-t="claro"]{background:#fff}
-.tones button[data-t="amarelo"]{background:var(--y)}
-.tones button[data-t="magenta"]{background:var(--m)}
-/* campos */
-.f{display:block;margin-bottom:10px}
-.f > span{display:block;font-family:var(--font-display);font-size:var(--step-small);letter-spacing:0;margin-bottom:.3rem}
-.f input,.f select,.f textarea{width:100%;min-height:52px;background:var(--c-soft);border:2px solid transparent;border-radius:var(--radius);padding:.75rem .9rem;font-size:max(1rem,var(--step-body));color:#000;outline:none;appearance:none;transition:border-color var(--t-hover) ease,background-color var(--t-hover) ease}
-.f input::placeholder,.f textarea::placeholder{color:#1e4f63}
-.f select{background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%228%22%20viewBox=%220%200%2012%208%22%3E%3Cpath%20d=%22M1%201.5%206%206.5%2011%201.5%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
-.f textarea{resize:vertical;min-height:84px}
-.f input:focus,.f select:focus,.f textarea:focus{border-color:#000;background-color:#fff}
-.f .invalid{border-color:var(--m);background-color:#fff}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.dyn{margin:4px 0 10px}
+/* Pedido */
+.order{display:grid;grid-template-columns:5fr 7fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.order__aside h2{font-size:clamp(2.25rem,1.5rem + 3vw,3.75rem);margin-bottom:1rem}
+.order__aside > p{color:var(--muted);max-width:34ch}
+.contacts{margin-top:2.25rem;border-top:1px solid var(--line)}
+.contacts a,.contacts div{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);font-size:.975rem}
+.contacts span{color:var(--muted)}
+.contacts b{font-weight:500;text-align:right}
+.contacts a b{border-bottom:1px solid transparent;transition:border-color .2s ease}
+.contacts a:hover b{border-color:currentColor}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.5rem,3.5vw,2.5rem)}
+.f{display:block;margin-bottom:1rem}
+.f > span{display:block;font-size:.875rem;font-weight:500;margin-bottom:.4rem}
+.f > span i{font-style:normal;color:var(--muted);font-weight:400}
+.f input,.f select,.f textarea{width:100%;min-height:3rem;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:.7rem .85rem;font-size:1rem;outline:none;appearance:none;transition:border-color .2s ease,background-color .2s ease}
+.f input::placeholder,.f textarea::placeholder{color:#a3a29f}
+.f select{background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%228%22%20viewBox=%220%200%2012%208%22%3E%3Cpath%20d=%22M1%201.5%206%206.5%2011%201.5%22%20fill=%22none%22%20stroke=%22%23787774%22%20stroke-width=%221.6%22/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 14px center;padding-right:2.4rem}
+.f textarea{resize:vertical;min-height:6rem}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--ink);background:#fff}
+.f .invalid{border-color:#9F2F2D;background:#FDEBEC}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
 .dyn:empty{display:none}
-.dyn-title{font-family:var(--font-display);font-size:var(--step-small);margin:.6rem 0 .5rem}
-.dyn-note{font-size:var(--step-small);margin-bottom:.6rem}
-.submit{width:100%;min-height:56px;margin-top:.6rem}
-.form-note{font-size:var(--step-small);margin-top:.8rem}
-.form-msg{font-size:var(--step-small);margin-top:.6rem;min-height:1.4em;font-weight:600}
+.dyn{padding:1.25rem 0 .25rem;margin:.25rem 0 1rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dyn-title{font-size:.875rem;color:var(--muted);margin-bottom:.9rem}
+.form .btn{width:100%;margin-top:.5rem;min-height:3.25rem}
+.form-msg{font-size:.9rem;color:#9F2F2D;margin-top:.75rem;min-height:1.4em}
+.form-note{font-size:.85rem;color:var(--muted)}
 
-/* ============ RODAPÉ — verso do cartão ============ */
-footer{background:var(--k);color:#000;padding:clamp(5rem,9vw,8rem) var(--margin) clamp(3rem,6vw,5rem)}
-.postcard{position:relative;width:calc(100% * 10 / 12);margin-inline:auto;background:#fff;padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,4vw,3.5rem) 2rem;
-  -webkit-mask:radial-gradient(50px at 50% 0,#0000 98%,#000) 50% 0/100px 100% repeat-x; /* taste-skill-ignore: recorte do cupom/postal, não é preenchimento; botão flutuante */
-          mask:radial-gradient(50px at 50% 0,#0000 98%,#000) 50% 0/100px 100% repeat-x} /* taste-skill-ignore: recorte do cupom/postal, não é preenchimento; botão flutuante */
-.postcard__grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.postcard h2{font-size:var(--step-head);margin-bottom:1.25rem;max-width:9ch}
-.postcard__msg p{max-width:34ch}
-.postcard__addr{position:relative;padding-top:8.5rem}
-.stamp{position:absolute;top:0;right:0;width:88px;background:#fff;padding:6px;outline:2px dashed #000;outline-offset:-2px}
-.stamp img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.addr{display:grid;gap:12px;font-size:var(--step-lead);line-height:1.25}
-.addr a{text-decoration:none}
-.addr span{font-size:var(--step-small);color:var(--muted);display:block}
-.imprint{text-align:center;font-size:var(--step-small);color:var(--muted);margin:3.5rem auto 0;max-width:none}
+/* Rodapé */
+footer{margin-top:var(--section);border-top:1px solid var(--line)}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;padding-block:3.5rem 2.5rem}
+.foot h2{font-size:clamp(2rem,1.4rem + 2.4vw,3rem);max-width:12ch}
+.foot h3{font-size:.875rem;font-weight:500;margin-bottom:.75rem}
+.foot li{color:var(--muted);font-size:.95rem;margin-bottom:.35rem}
+.foot li a{transition:color .2s ease}
+.foot li a:hover{color:var(--ink)}
+.foot__bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:1.5rem 2rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
 
-/* ============ WHATSAPP FLUTUANTE ============ */
-.waf{position:fixed;bottom:1.25rem;right:1.25rem;z-index:40;width:3.6rem;height:3.6rem;border-radius:50%;background:var(--wa);color:#000;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform var(--t-press) var(--ease-out)} /* taste-skill-ignore: recorte do cupom/postal, não é preenchimento; botão flutuante */
-.waf .ic{width:1.7rem;height:1.7rem}
-.waf:active{transform:scale(.93)}
-@media (hover:hover){.waf:hover{transform:scale(1.07)}}
+/* WhatsApp flutuante */
+.waf{position:fixed;right:1.25rem;bottom:1.25rem;z-index:40;width:3.25rem;height:3.25rem;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08);transition:transform .15s ease}
+.waf .ic{width:1.5rem;height:1.5rem}
+.waf:active{transform:scale(.94)}
 
 /* ============ MOVIMENTO ============ */
 @media (prefers-reduced-motion:no-preference){
-  .js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity 700ms var(--ease-out),transform 900ms var(--ease-out);transition-delay:calc(var(--i,0) * 80ms)}
-  .js [data-reveal].is-in{opacity:1;transform:none}
-  .js .shutter[data-reveal] img{transform:scale(1.22);transition:transform 1800ms var(--ease-out)}
-  .js .shutter[data-reveal].is-in img{transform:scale(1.08)}
-  .js [data-rise]{opacity:0;transform:translateY(18px);animation:rise var(--t-reveal) var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 90ms + 120ms)}
-  .stage .specimen__tile img.is-on{animation:drift 14s ease-in-out infinite alternate}
+  .js [data-r]{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
+  .js [data-r].in{opacity:1;transform:none}
 }
-@keyframes rise{to{opacity:1;transform:none}}
-@keyframes drift{from{transform:scale(1)}to{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
 
 /* ============ RESPONSIVO ============ */
-@media (max-width:900px){
-  .nav-links a:not(.button){display:none}
-  .story{grid-template-columns:1fr}
-  .stage{order:-1;position:relative;height:auto;padding:5.5rem var(--margin) 2.5rem}
-  .stage__top{display:none}
-  .specimen{width:62vw;margin-top:1rem}
-  .hero{min-height:0;padding-top:2.5rem;padding-bottom:1rem}
-  .hero .acts .button{flex:1 1 100%}
-  .cat__pic{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;margin-bottom:2rem}
-  .cat{padding-top:6rem}
-  .work__intro h2,.work__intro p{grid-column:1/-1}
-  .work__intro p{margin-top:1rem}
-  .job{grid-template-columns:1fr}
-  .job + .job{margin-top:88px}
-  .job__big,.job:nth-of-type(2) .job__big,.job:nth-of-type(3) .job__big{grid-column:1;width:110%;height:auto;aspect-ratio:4/5}
-  .job__side{grid-column:1;display:flex;flex-direction:column}
-  .job__side img{order:2;width:70%;align-self:flex-end;margin-top:1.5rem}
-  .job__meta{grid-template-columns:1fr;gap:.6rem}
-  .job__meta h3{font-size:var(--step-head)}
-  .job__meta p{font-size:var(--step-body)}
-  .how__grid{grid-template-columns:1fr;gap:0}
-  .how__head{grid-column:1;grid-row:auto;margin-bottom:2rem}
-  .st1,.st2,.st3{grid-column:1;grid-row:auto}
-  .st1{height:34vw}.st2{height:46vw}.st3{height:62vw}
-  .how__grid .stage-tile + .how-txt{margin:1rem 0 2rem}
-  .how__text{display:none}
-  .how-txt{display:block!important}
-  .order__intro h2,.order__intro p{grid-column:1/-1}
-  .order__intro p{margin-top:1rem}
-  .coupon{width:100%;grid-template-columns:1fr;
-    -webkit-mask:radial-gradient(circle var(--notch) at 0 var(--cut,38%),#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--notch) at 100% var(--cut,38%),#0000 98%,#000) right/51% 100% no-repeat; /* taste-skill-ignore: recorte do cupom/postal, não é preenchimento; botão flutuante */
-            mask:radial-gradient(circle var(--notch) at 0 var(--cut,38%),#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--notch) at 100% var(--cut,38%),#0000 98%,#000) right/51% 100% no-repeat} /* taste-skill-ignore: recorte do cupom/postal, não é preenchimento; botão flutuante */
-  .coupon__left,.coupon__right{padding:2rem 1.25rem}
-  .coupon__right{border-left:0;border-top:5px dotted var(--bg)}
-  .pair{grid-template-columns:1fr}
-  .postcard{width:100%;-webkit-mask-size:calc(100% / 6) 100%;mask-size:calc(100% / 6) 100%}
-  .postcard__grid{grid-template-columns:1fr;gap:2.5rem}
-  .postcard__addr{padding-top:0}
-  .stamp{width:64px;top:-1rem}
-  .addr{font-size:var(--step-body)}
+@media (max-width:880px){
+  .nav__links a:not(.btn){display:none}
+  .bento{grid-template-columns:1fr 1fr}
+  .c1,.c4{grid-column:span 2}
+  .c2,.c3{grid-column:span 1}
+  .c2 .card__img,.c3 .card__img{aspect-ratio:4/5;flex:none;min-height:0}
+  .order{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot > div:first-child{grid-column:1/-1}
 }
-.how-txt{display:none}
+@media (max-width:600px){
+  .hero__img img{aspect-ratio:4/5}
+  .hero__acts{width:100%}
+  .hero__acts .btn{flex:1 1 100%}
+  .facts{grid-template-columns:1fr}
+  .facts li,.facts li + li{padding:1rem 0;border-left:0;border-bottom:1px solid var(--line)}
+  .bento{grid-template-columns:1fr}
+  .c1,.c2,.c3,.c4{grid-column:auto}
+  .c1 .card__img,.c2 .card__img,.c3 .card__img,.c4 .card__img{aspect-ratio:4/3}
+  .gallery{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);scroll-padding-inline:var(--pad);scrollbar-width:none}
+  .gallery::-webkit-scrollbar{display:none}
+  .gallery figure{scroll-snap-align:start}
+  .steps{grid-template-columns:1fr;gap:1.75rem}
+  .pair{grid-template-columns:1fr}
+  .contacts b{font-size:.925rem}
+  .foot{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -302,258 +218,187 @@ footer{background:var(--k);color:#000;padding:clamp(5rem,9vw,8rem) var(--margin)
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
 </svg>
 
-<!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <a class="brand" href="#inicio" aria-label="MultiGráfica Jacareí — início">
-    <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
-    MultiGráfica Jacareí
-  </a>
-  <nav class="nav-links" aria-label="Principal">
-    <a class="link" href="#produtos">Produtos</a>
-    <a class="link" href="#trabalhos">Trabalhos</a>
-    <a class="link" href="#como">Como funciona</a>
-    <a class="button" href="#pedido">Fazer pedido</a>
-  </nav>
+  <div class="wrap nav__in">
+    <a class="brand" href="#inicio" aria-label="MultiGráfica Jacareí — início">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      MultiGráfica
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#como">Como funciona</a>
+      <a class="btn" href="#pedido">Pedir orçamento</a>
+    </nav>
+  </div>
 </header>
 
 <main id="inicio">
 
-<!-- ============ HERO + CATÁLOGO: o quadro à direita troca de amostra ============ -->
-<div class="story">
-  <div class="story__text">
-
-    <section class="hero" data-tile="0">
-      <h1 data-rise style="--i:0">Cartão pronto no mesmo dia.</h1>
-      <p data-rise style="--i:1">Panfletos, banners, adesivos, sacolas e brindes impressos aqui em Jacareí. Você monta o pedido no site e recebe o orçamento no WhatsApp.</p>
-      <div class="acts" data-rise style="--i:2">
-        <a class="button" href="#pedido">Montar meu pedido</a>
-        <a class="link" href="#produtos">Ver o que imprimimos</a>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <h1 class="serif" data-r>Impressão rápida, <em>feita com cuidado.</em></h1>
+    <div class="hero__row">
+      <p data-r style="--i:1">Gráfica em Jacareí para cartões, panfletos, banners, adesivos e brindes. Cartão de visita e panfleto podem ficar prontos no mesmo dia.</p>
+      <div class="hero__acts" data-r style="--i:2">
+        <a class="btn" href="#pedido">Montar pedido</a>
+        <a class="btn btn--ghost" href="https://wa.me/5512981759519?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a>
       </div>
-    </section>
-
-    <section class="cat" id="produtos" data-tile="1">
-      <div class="cat__head" data-reveal><h2>Cartões e papelaria</h2><span>5 produtos</span></div>
-      <img class="cat__pic" src="fotos/02-cartoes-bem-garota-4x5.webp" width="1200" height="1500" alt="Cartões de visita da Bem Garota Makes em papel branco com arte azul" loading="lazy"/>
-      <ul class="items">
-        <li class="item" data-reveal><img src="fotos/14-cartoes-azul-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Cartão de visita <em>Mesmo dia</em></h3><p>Frente e verso, laminação fosca ou brilho. Pediu de manhã, retira no mesmo dia.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/01-cartoes-hm-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Cartão com verniz localizado</h3><p>Brilho só no logo e nos detalhes, para a primeira impressão durar mais.</p></div></li>
-        <li class="item" data-reveal><span class="chip" style="background:var(--m)" aria-hidden="true"></span><div><h3>Voucher e cartão-fidelidade</h3><p>Cartões de desconto com a identidade da sua loja, para trazer o cliente de volta.</p></div></li>
-        <li class="item" data-reveal><span class="chip" style="background:var(--y)" aria-hidden="true"></span><div><h3>Bloco de pedido autocopiativo</h3><p>Segunda via amarela sem carbono, personalizado com o seu logo.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/12-marcador-pagina-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Marcador de página e tags</h3><p>Para livros, lançamentos, brindes e embalagens.</p></div></li>
-      </ul>
-    </section>
-
-    <section class="cat" data-tile="2">
-      <div class="cat__head" data-reveal><h2>Divulgação</h2><span>5 produtos</span></div>
-      <img class="cat__pic" src="fotos/11-panfletos-black-decor-4x5.webp" width="1200" height="1500" alt="Pilhas de panfletos da Black Decor em caixas" loading="lazy"/>
-      <ul class="items">
-        <li class="item" data-reveal><img src="fotos/11-panfletos-black-decor-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Panfletos <em>Mesmo dia</em></h3><p>Opção de papel com produção no mesmo dia para quem precisa divulgar já.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/13-fachada-decorcolors-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Banner e faixa em lona</h3><p>Qualquer medida, com ilhós, bainha ou bastão e cordão reforçado.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/15-fachada-multigrafica-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Fachada e estrutura</h3><p>Lona, estrutura metálica e adesivagem de vitrine, com instalação.</p></div></li>
-        <li class="item" data-reveal><span class="chip" style="background:var(--c)" aria-hidden="true"></span><div><h3>Folder e cardápio</h3><p>Dobras ao meio ou sanfona, plastificação para cardápio de balcão.</p></div></li>
-        <li class="item" data-reveal><span class="chip" style="background:var(--y)" aria-hidden="true"></span><div><h3>Placa vende-se e aluga-se</h3><p>Pronta para pendurar, com o seu telefone em letra grande.</p></div></li>
-      </ul>
-    </section>
-
-    <section class="cat" data-tile="3">
-      <div class="cat__head" data-reveal><h2>Adesivos e etiquetas</h2><span>4 produtos</span></div>
-      <img class="cat__pic" src="fotos/09-adesivos-redondos-4x5.webp" width="1200" height="1500" alt="Folha de adesivos redondos da Alfa Sports Shop" loading="lazy"/>
-      <ul class="items">
-        <li class="item" data-reveal><img src="fotos/09-adesivos-redondos-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Adesivo redondo personalizado</h3><p>Para embalagens, lembrancinhas e produtos, em vários tamanhos.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/07-cartoes-garante-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Adesivo DTF e recortado</h3><p>Recorte no formato do logo, para carros, vitrines e equipamentos.</p></div></li>
-        <li class="item" data-reveal><span class="chip" style="background:var(--c)" aria-hidden="true"></span><div><h3>Adesivo à prova d'água</h3><p>Vinil resistente para potes, delivery e restaurante.</p></div></li>
-        <li class="item" data-reveal><span class="chip" style="background:var(--m)" aria-hidden="true"></span><div><h3>Etiqueta escolar</h3><p>Com nome e desenho, para material e uniforme da volta às aulas.</p></div></li>
-      </ul>
-    </section>
-
-    <section class="cat" data-tile="4">
-      <div class="cat__head" data-reveal><h2>Personalizados</h2><span>5 produtos</span></div>
-      <img class="cat__pic" src="fotos/05-coqueteleiras-4x5.webp" width="1200" height="1500" alt="Coqueteleiras pretas com o logo CT Start Power" loading="lazy"/>
-      <ul class="items">
-        <li class="item" data-reveal><img src="fotos/05-coqueteleiras-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Coqueteleiras, canecas e squeezes</h3><p>Brindes com a sua marca para academia, evento ou equipe.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/08-camiseta-arraia-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Camisetas e bodies</h3><p>Sublimação, serigrafia e DTF para uniforme, time e festa.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/04-sacola-joias-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Sacolas para loja</h3><p>Papel com alça de cordão, impressas com o logo da loja.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/06-agenda-leao-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Agendas, cadernos e Bíblias</h3><p>Capa personalizada com nome, foto ou arte exclusiva.</p></div></li>
-        <li class="item" data-reveal><img src="fotos/10-cordoes-semear-1x1.webp" width="64" height="64" alt="" loading="lazy"/><div><h3>Cordão e crachá</h3><p>Para empresas, escolas e eventos, com logo e cores da marca.</p></div></li>
-      </ul>
-    </section>
-
-  </div>
-
-  <aside class="stage" aria-label="Amostra do catálogo">
-    <a class="stage__top link" href="https://www.instagram.com/multigrafica.jacarei/" target="_blank" rel="noopener">@multigrafica.jacarei</a>
-    <figure class="specimen">
-      <div class="specimen__tile" id="tile">
-        <img class="is-on" src="fotos/01-cartoes-hm-1x1.webp" width="1200" height="1200" alt="Cartões de visita pretos e dourados da HM Construções numa caixa"/>
-        <img src="fotos/02-cartoes-bem-garota-1x1.webp" width="1200" height="1200" alt="Cartões de visita da Bem Garota Makes" loading="lazy"/>
-        <img src="fotos/11-panfletos-black-decor-1x1.webp" width="1200" height="1200" alt="Panfletos da Black Decor" loading="lazy"/>
-        <img src="fotos/09-adesivos-redondos-1x1.webp" width="1200" height="1200" alt="Adesivos redondos da Alfa Sports Shop" loading="lazy"/>
-        <img src="fotos/05-coqueteleiras-1x1.webp" width="1200" height="1200" alt="Coqueteleiras com o logo CT Start Power" loading="lazy"/>
-      </div>
-      <figcaption class="specimen__cap" id="cap"><b>Cartões HM Construções</b>Preto com dourado, entregues na caixa</figcaption>
+    </div>
+    <figure class="hero__img" data-r style="--i:3">
+      <picture>
+        <source media="(max-width:600px)" srcset="fotos/01-cartoes-hm-4x5.webp" width="1200" height="1500"/>
+        <img src="fotos/01-cartoes-hm-16x10.webp" width="1600" height="1000" alt="Cartões de visita pretos e dourados da HM Construções em uma caixa"/>
+      </picture>
     </figure>
-    <div class="inks" aria-hidden="true"><i></i><i></i><i class="is-on"></i><i></i></div>
-  </aside>
-</div>
+    <ul class="facts">
+      <li data-r><b>Mesmo dia</b><span>para cartão de visita e panfleto</span></li>
+      <li data-r style="--i:1"><b>Produção local</b><span>impresso aqui em Jacareí</span></li>
+      <li data-r style="--i:2"><b>Orçamento no WhatsApp</b><span>o pedido chega organizado</span></li>
+    </ul>
+  </section>
 
-<!-- ============ TRABALHOS ============ -->
-<section class="work wrap" id="trabalhos">
-  <div class="work__intro">
-    <h2 data-reveal>Trabalhos que saíram daqui</h2>
-    <p data-reveal style="--i:1">Trabalhos reais de clientes de Jacareí e região, os mesmos que publicamos no nosso Instagram.</p>
-  </div>
-
-  <article class="job">
-    <figure class="job__big shutter" data-reveal><img src="fotos/01-cartoes-hm-4x5.webp" width="1200" height="1500" alt="Cartões de visita da HM Construções em leque sobre pilhas de cartões" loading="lazy"/></figure>
-    <div class="job__side">
-      <img src="fotos/03-cartoes-caixa-16x10.webp" width="1600" height="1000" alt="Caixa com cartões de visita de vários clientes" loading="lazy" data-reveal/>
-      <div class="job__meta" data-reveal style="--i:1">
-        <h3>HM Construções</h3>
-        <p>Cartão preto com a arte em dourado, para uma construtora que queria parecer tão sólida quanto as obras. Separado e entregue na caixa.</p>
-      </div>
+  <!-- PRODUTOS -->
+  <section class="section wrap" id="produtos">
+    <div class="head">
+      <h2 class="serif" data-r>O que imprimimos</h2>
+      <p data-r style="--i:1">Do cartão de visita à fachada da loja, com acabamento conferido peça por peça.</p>
     </div>
-  </article>
-
-  <article class="job">
-    <figure class="job__big shutter" data-reveal><img src="fotos/05-coqueteleiras-16x10.webp" width="1600" height="1000" alt="Fileira de coqueteleiras pretas personalizadas" loading="lazy"/></figure>
-    <div class="job__side">
-      <img src="fotos/07-cartoes-garante-16x10.webp" width="1600" height="1000" alt="Adesivos recortados da Garante Motors" loading="lazy" data-reveal/>
-      <div class="job__meta" data-reveal style="--i:1">
-        <h3>CT Start Power</h3>
-        <p>Coqueteleiras com o logo em branco e amarelo para o centro de treinamento. Ao lado, adesivos recortados para a Garante Motors.</p>
-      </div>
+    <div class="bento">
+      <article class="card c1" data-r>
+        <div class="card__img"><img src="fotos/02-cartoes-bem-garota-4x5.webp" width="1200" height="1500" alt="Cartões de visita da Bem Garota Makes" loading="lazy"/></div>
+        <div class="card__body"><h3>Cartões e papelaria <span class="tag">Mesmo dia</span></h3><p>Cartão de visita, verniz localizado, voucher, bloco autocopiativo e marcador de página.</p></div>
+      </article>
+      <article class="card c2" data-r style="--i:1">
+        <div class="card__img"><img src="fotos/11-panfletos-black-decor-4x5.webp" width="1200" height="1500" alt="Panfletos da Black Decor" loading="lazy"/></div>
+        <div class="card__body"><h3>Divulgação</h3><p>Panfletos, folders, banners, faixas e fachadas em lona.</p></div>
+      </article>
+      <article class="card c3" data-r>
+        <div class="card__img"><img src="fotos/09-adesivos-redondos-4x5.webp" width="1200" height="1500" alt="Adesivos redondos da Alfa Sports Shop" loading="lazy"/></div>
+        <div class="card__body"><h3>Adesivos e etiquetas</h3><p>Redondos, recortados, à prova d'água e etiqueta escolar.</p></div>
+      </article>
+      <article class="card c4" data-r style="--i:1">
+        <div class="card__img"><img src="fotos/05-coqueteleiras-16x10.webp" width="1600" height="1000" alt="Coqueteleiras personalizadas CT Start Power" loading="lazy"/></div>
+        <div class="card__body"><h3>Personalizados</h3><p>Coqueteleiras, canecas, camisetas, sacolas, agendas e cordões de crachá.</p></div>
+      </article>
     </div>
-  </article>
+    <p class="more">Não achou o que precisa? <a class="link" href="https://wa.me/5512981759519?text=Ol%C3%A1!%20Preciso%20de%20um%20produto%20que%20n%C3%A3o%20est%C3%A1%20no%20site." target="_blank" rel="noopener">Pergunte no WhatsApp</a>.</p>
+  </section>
 
-  <article class="job">
-    <figure class="job__big shutter" data-reveal><img src="fotos/04-sacola-joias-4x5.webp" width="1200" height="1500" alt="Sacola preta de papel com o logo da N Jóias" loading="lazy"/></figure>
-    <div class="job__side">
-      <img src="fotos/16-sacolas-16x10.webp" width="1600" height="1000" alt="Sacolas brancas personalizadas com logo colorido" loading="lazy" data-reveal/>
-      <div class="job__meta" data-reveal style="--i:1">
-        <h3>N Jóias</h3>
-        <p>Sacola preta com alça de cordão e o logo em azul e branco. Ao lado, sacolas brancas de outra loja, no mesmo modelo.</p>
-      </div>
+  <!-- TRABALHOS -->
+  <section class="section wrap" id="trabalhos">
+    <div class="head">
+      <h2 class="serif" data-r>Trabalhos recentes</h2>
+      <a class="link" href="https://www.instagram.com/multigrafica.jacarei/" target="_blank" rel="noopener" data-r style="--i:1">Ver mais no Instagram</a>
     </div>
-  </article>
+    <div class="gallery">
+      <figure data-r><div class="ph"><img src="fotos/04-sacola-joias-4x5.webp" width="1200" height="1500" alt="Sacola preta com o logo da N Jóias" loading="lazy"/></div><figcaption>N Jóias <span>· Sacolas</span></figcaption></figure>
+      <figure data-r style="--i:1"><div class="ph"><img src="fotos/06-agenda-leao-1x1.webp" width="1200" height="1200" alt="Agenda com capa personalizada de leão" loading="lazy"/></div><figcaption>Agenda personalizada <span>· Capa com nome</span></figcaption></figure>
+      <figure data-r style="--i:2"><div class="ph"><img src="fotos/07-cartoes-garante-1x1.webp" width="1200" height="1200" alt="Adesivos recortados da Garante Motors" loading="lazy"/></div><figcaption>Garante Motors <span>· Adesivos</span></figcaption></figure>
+      <figure data-r><div class="ph"><img src="fotos/10-cordoes-semear-1x1.webp" width="1200" height="1200" alt="Crachás com cordão da Equipe Semear" loading="lazy"/></div><figcaption>Instituto Semear <span>· Crachás</span></figcaption></figure>
+      <figure data-r style="--i:1"><div class="ph"><img src="fotos/08-camiseta-arraia-1x1.webp" width="1200" height="1200" alt="Camiseta infantil do Arraiá dos Amigos" loading="lazy"/></div><figcaption>Arraiá dos Amigos <span>· Camiseta</span></figcaption></figure>
+      <figure data-r style="--i:2"><div class="ph"><img src="fotos/12-marcador-pagina-1x1.webp" width="1200" height="1200" alt="Marcador de página de livro" loading="lazy"/></div><figcaption>Lançamento de livro <span>· Marcador</span></figcaption></figure>
+    </div>
+  </section>
 
-  <div class="work__more" data-reveal>
-    <p>Mais de cem trabalhos publicados no nosso Instagram, de etiqueta escolar a fachada.</p>
-    <a class="button button--ink" href="https://www.instagram.com/multigrafica.jacarei/" target="_blank" rel="noopener">Ver no Instagram</a>
-  </div>
-</section>
+  <!-- COMO FUNCIONA -->
+  <section class="section wrap" id="como">
+    <div class="head">
+      <h2 class="serif" data-r>Como funciona</h2>
+    </div>
+    <ol class="steps">
+      <li data-r><h3>Você escolhe</h3><p>Monte o pedido aqui no site ou mande a arte pelo WhatsApp. Sem arte? A gente cria.</p></li>
+      <li data-r style="--i:1"><h3>A gente imprime</h3><p>Conferimos o arquivo, enviamos o orçamento e produzimos aqui mesmo, em Jacareí.</p></li>
+      <li data-r style="--i:2"><h3>Você retira</h3><p>Pedido conferido e embalado. Cartão e panfleto podem sair no mesmo dia.</p></li>
+    </ol>
+  </section>
 
-<!-- ============ COMO FUNCIONA ============ -->
-<section class="how wrap" id="como">
-  <div class="how__grid">
-    <h2 class="how__head" data-reveal>Do arquivo à caixa</h2>
-    <div class="stage-tile st1" data-reveal><img src="fotos/14-cartoes-azul-1x1.webp" width="1200" height="1200" alt="Cartões de visita azuis da Sur" loading="lazy"/></div>
-    <div class="how-txt"><h3>Primeiro, você escolhe</h3><p>Monte o pedido aqui no site ou mande a arte pelo WhatsApp. Sem arte? A gente cria.</p></div>
-    <div class="stage-tile st2" data-reveal style="--i:1"><img src="fotos/11-panfletos-black-decor-4x5.webp" width="1200" height="1500" alt="Panfletos impressos empilhados" loading="lazy"/></div>
-    <div class="how-txt"><h3>Depois, a gente imprime</h3><p>Conferimos o arquivo, mandamos o orçamento e imprimimos aqui mesmo, em Jacareí.</p></div>
-    <div class="stage-tile st3" data-reveal style="--i:2"><img src="fotos/01-cartoes-hm-4x5.webp" width="1200" height="1500" alt="Cartões prontos na caixa para retirada" loading="lazy"/></div>
-    <div class="how-txt"><h3>Por fim, você retira</h3><p>Pedido conferido e embalado. Cartão e panfleto podem sair no mesmo dia.</p></div>
-  </div>
-  <div class="how__text">
-    <div data-reveal><h3>Primeiro, você escolhe</h3><p>Monte o pedido aqui no site ou mande a arte pelo WhatsApp. Sem arte? A gente cria.</p></div>
-    <div data-reveal style="--i:1"><h3>Depois, a gente imprime</h3><p>Conferimos o arquivo, mandamos o orçamento e imprimimos aqui mesmo, em Jacareí.</p></div>
-    <div data-reveal style="--i:2"><h3>Por fim, você retira</h3><p>Pedido conferido e embalado. Cartão e panfleto podem sair no mesmo dia.</p></div>
-  </div>
-</section>
-
-<!-- ============ PEDIDO ============ -->
-<section class="order wrap" id="pedido">
-  <div class="order__intro">
-    <h2 data-reveal>Monte seu pedido</h2>
-    <p data-reveal style="--i:1">Preencha o cupom e ele chega organizado no nosso WhatsApp. O orçamento volta rápido no horário comercial.</p>
-  </div>
-
-  <form class="coupon" id="form" novalidate data-reveal>
-    <div class="coupon__left">
-      <h3>Seu cartão, ao vivo</h3>
-      <div>
-        <div class="livecard" id="livecard" data-tone="preto" aria-live="polite">
-          <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="livecard__co" id="lcCo">Sua marca aqui</span>
-          <span class="livecard__name"><b id="lcName">Seu nome</b><span id="lcProd">Cartão de visita</span></span>
+  <!-- PEDIDO -->
+  <section class="section wrap" id="pedido">
+    <div class="order">
+      <div class="order__aside">
+        <h2 class="serif" data-r>Monte seu pedido</h2>
+        <p data-r style="--i:1">Preencha o formulário e ele chega organizado no nosso WhatsApp. Respondemos com o orçamento no horário comercial.</p>
+        <div class="contacts" data-r style="--i:2">
+          <a href="https://wa.me/5512981759519?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><span>WhatsApp</span><b>(12) 98175-9519</b></a>
+          <a href="https://wa.me/5512982025825?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><span>WhatsApp</span><b>(12) 98202-5825</b></a>
+          <div><span>Horário</span><b>Seg–Sex 8h–18h · Sáb 8h–13h</b></div>
         </div>
-        <div class="tones" role="group" aria-label="Cor de fundo do cartão">
-          <button type="button" data-t="preto" aria-pressed="true"><span class="sr-only">Preto</span></button>
-          <button type="button" data-t="claro" aria-pressed="false"><span class="sr-only">Branco</span></button>
-          <button type="button" data-t="amarelo" aria-pressed="false"><span class="sr-only">Amarelo</span></button>
-          <button type="button" data-t="magenta" aria-pressed="false"><span class="sr-only">Magenta</span></button>
-        </div>
-        <p class="livecard__note">Digite a empresa e o seu nome e veja como fica. É só uma prévia: a arte final a gente ajusta com você.</p>
       </div>
-      <p>Nenhum dado fica salvo no site. O pedido vai para o WhatsApp (12) 98175-9519.</p>
-    </div>
 
-    <div class="coupon__right">
-      <label class="f"><span>Produto *</span>
-        <select id="psel">
-          <option value="">Selecione o produto</option>
-          <option value="cartao">Cartão de visita</option>
-          <option value="panfleto">Panfleto / Folder</option>
-          <option value="banner">Banner / Faixa</option>
-          <option value="camiseta">Camiseta personalizada</option>
-          <option value="caneca">Caneca / Brinde</option>
-          <option value="adesivo">Adesivo / Etiqueta</option>
-          <option value="embalagem">Embalagem / Sacola</option>
-          <option value="calendario">Calendário / Agenda</option>
-          <option value="outro">Outro produto</option>
-        </select>
-      </label>
-      <div class="dyn" id="dbox"></div>
-      <div class="pair">
-        <label class="f"><span>Empresa ou marca</span><input id="empresa" type="text" autocomplete="organization" placeholder="Ex.: Doces da Ana"/></label>
-        <label class="f"><span>Seu nome *</span><input id="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?"/></label>
-      </div>
-      <div class="pair">
-        <label class="f"><span>Quantidade *</span><input id="qtd" type="number" min="1" inputmode="numeric" placeholder="Ex.: 500"/></label>
-        <label class="f"><span>Prazo</span>
-          <select id="prazo">
-            <option>Normal (5–7 dias úteis)</option>
-            <option>Rápido (2–3 dias úteis)</option>
-            <option>Mesmo dia (cartão e panfleto)</option>
-            <option>Urgente (a combinar)</option>
+      <form class="form" id="form" novalidate data-r style="--i:1">
+        <label class="f"><span>Produto</span>
+          <select id="psel">
+            <option value="">Selecione o produto</option>
+            <option value="cartao">Cartão de visita</option>
+            <option value="panfleto">Panfleto / Folder</option>
+            <option value="banner">Banner / Faixa</option>
+            <option value="camiseta">Camiseta personalizada</option>
+            <option value="caneca">Caneca / Brinde</option>
+            <option value="adesivo">Adesivo / Etiqueta</option>
+            <option value="embalagem">Embalagem / Sacola</option>
+            <option value="calendario">Calendário / Agenda</option>
+            <option value="outro">Outro produto</option>
           </select>
         </label>
-      </div>
-      <label class="f"><span>Arte</span>
-        <select id="arte">
-          <option>Tenho a arte pronta</option>
-          <option>Preciso de criação da arte</option>
-          <option>Tenho referência, preciso de ajustes</option>
-        </select>
-      </label>
-      <label class="f"><span>Observações</span><textarea id="obs" rows="3" placeholder="Cores, medidas, link da arte…"></textarea></label>
-      <button class="button button--ink submit" type="submit"><svg class="ic"><use href="#i-wa"/></svg> Enviar pelo WhatsApp</button>
-      <p class="form-msg" id="msg" role="status"></p>
+        <div class="dyn" id="dbox"></div>
+        <div class="pair">
+          <label class="f"><span>Seu nome</span><input id="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?"/></label>
+          <label class="f"><span>Empresa <i>(opcional)</i></span><input id="empresa" type="text" autocomplete="organization" placeholder="Nome da marca"/></label>
+        </div>
+        <div class="pair">
+          <label class="f"><span>Quantidade</span><input id="qtd" type="number" min="1" inputmode="numeric" placeholder="Ex.: 500"/></label>
+          <label class="f"><span>Prazo</span>
+            <select id="prazo">
+              <option>Normal (5–7 dias úteis)</option>
+              <option>Rápido (2–3 dias úteis)</option>
+              <option>Mesmo dia (cartão e panfleto)</option>
+              <option>Urgente (a combinar)</option>
+            </select>
+          </label>
+        </div>
+        <label class="f"><span>Arte</span>
+          <select id="arte">
+            <option>Tenho a arte pronta</option>
+            <option>Preciso de criação da arte</option>
+            <option>Tenho referência, preciso de ajustes</option>
+          </select>
+        </label>
+        <label class="f"><span>Observações <i>(opcional)</i></span><textarea id="obs" rows="3" placeholder="Cores, medidas, link da arte…"></textarea></label>
+        <button class="btn" type="submit"><svg class="ic"><use href="#i-wa"/></svg>Enviar pelo WhatsApp</button>
+        <p class="form-msg" id="msg" role="status"></p>
+        <p class="form-note">Nenhum dado fica salvo no site.</p>
+      </form>
     </div>
-  </form>
-</section>
+  </section>
 
 </main>
 
-<!-- ============ RODAPÉ — o verso do cartão ============ -->
 <footer>
-  <div class="postcard">
-    <div class="postcard__grid">
-      <div class="postcard__msg">
-        <h2>Até o próximo pedido.</h2>
-        <p>Passe no balcão, mande a arte pelo WhatsApp ou só venha tirar uma dúvida. A gente atende de segunda a sábado, aqui em Jacareí.</p>
-        <p>Seg a sex, 8h às 18h. Sábado, 8h às 13h.</p>
-      </div>
-      <div class="postcard__addr">
-        <figure class="stamp"><img src="fotos/15-fachada-multigrafica-4x5.webp" width="1200" height="1500" alt="Fachada azul da MultiGráfica Jacareí" loading="lazy"/></figure>
-        <div class="addr">
-          <a class="link" href="https://wa.me/5512981759519?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><span>WhatsApp</span>(12) 98175-9519</a>
-          <a class="link" href="https://wa.me/5512982025825?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><span>WhatsApp</span>(12) 98202-5825</a>
-          <a class="link" href="https://www.instagram.com/multigrafica.jacarei/" target="_blank" rel="noopener"><span>Instagram</span>@multigrafica.jacarei</a>
-          <a class="link" href="https://www.google.com/maps/search/MultiGr%C3%A1fica+Jacare%C3%AD" target="_blank" rel="noopener"><span>Endereço</span>Jacareí, SP</a>
-        </div>
-      </div>
+  <div class="wrap foot">
+    <div>
+      <h2 class="serif">Até o próximo pedido.</h2>
     </div>
-    <p class="imprint">© 2026 MultiGráfica Jacareí. Impresso em Jacareí, publicado na internet.</p>
+    <div>
+      <h3>Contato</h3>
+      <ul>
+        <li><a href="https://wa.me/5512981759519" target="_blank" rel="noopener">(12) 98175-9519</a></li>
+        <li><a href="https://wa.me/5512982025825" target="_blank" rel="noopener">(12) 98202-5825</a></li>
+        <li><a href="https://www.instagram.com/multigrafica.jacarei/" target="_blank" rel="noopener">@multigrafica.jacarei</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Visite</h3>
+      <ul>
+        <li><a href="https://www.google.com/maps/search/MultiGr%C3%A1fica+Jacare%C3%AD" target="_blank" rel="noopener">Jacareí, SP</a></li>
+        <li>Seg a sex, 8h às 18h</li>
+        <li>Sábado, 8h às 13h</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot__bottom">
+    <span>© 2026 MultiGráfica Jacareí</span>
+    <span>Gráfica rápida e personalizados</span>
   </div>
 </footer>
 
@@ -563,55 +408,19 @@ footer{background:var(--k);color:#000;padding:clamp(5rem,9vw,8rem) var(--margin)
 (function(){
   var $ = function(s){ return document.querySelector(s); };
 
-  /* ---- Revelar ao entrar na tela ---- */
-  var rev = document.querySelectorAll('[data-reveal]');
+  /* ---- Entrada suave ---- */
+  var els = document.querySelectorAll('[data-r]');
   if ('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    }, { rootMargin:'0px 0px -10% 0px', threshold:0.08 });
-    rev.forEach(function(el){ io.observe(el); });
-    window.addEventListener('load', function(){ setTimeout(function(){
-      rev.forEach(function(el){ var r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in'); });
-    }, 2500); });
-  } else rev.forEach(function(el){ el.classList.add('is-in'); });
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin:'0px 0px -8% 0px', threshold:0.05 });
+    els.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ els.forEach(function(el){ var r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add('in'); }); }, 2500);
+  } else els.forEach(function(el){ el.classList.add('in'); });
 
-  /* ---- Nav some ao descer, volta ao subir ---- */
-  var nav = $('#nav'), lastY = 0;
-  addEventListener('scroll', function(){
-    var y = scrollY;
-    nav.classList.toggle('is-hidden', y > lastY && y > 400);
-    lastY = y;
-  }, { passive:true });
-
-  /* ---- Amostra fixa: troca foto e tinta conforme a categoria ---- */
-  var TILES = [
-    { ink:'var(--y)', i:2, t:'Cartões HM Construções', f:'Preto com dourado, entregues na caixa' },
-    { ink:'var(--c)', i:0, t:'Cartões Bem Garota Makes', f:'Branco com a arte em azul' },
-    { ink:'var(--m)', i:1, t:'Panfletos Black Decor', f:'Produção de panfletos para a loja' },
-    { ink:'var(--y)', i:2, t:'Adesivos Alfa Sports Shop', f:'Redondos, em folha, prontos para colar' },
-    { ink:'#ffffff', i:3, t:'Coqueteleiras CT Start Power', f:'Brinde para os alunos do centro de treino' }
-  ];
-  var tile = $('#tile'), imgs = tile.querySelectorAll('img'), cap = $('#cap'),
-      inks = document.querySelectorAll('.inks i'), cur = 0;
-  function show(n){
-    if (n === cur) return; cur = n;
-    var d = TILES[n];
-    tile.style.backgroundColor = d.ink;
-    imgs.forEach(function(im, k){ im.classList.toggle('is-on', k === n); });
-    cap.innerHTML = '<b>' + d.t + '</b>' + d.f;
-    inks.forEach(function(el, k){ el.classList.toggle('is-on', k === d.i); });
-  }
-  if ('IntersectionObserver' in window){
-    var so = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting) show(+e.target.dataset.tile); });
-    }, { rootMargin:'-45% 0px -45% 0px' });
-    document.querySelectorAll('[data-tile]').forEach(function(el){ so.observe(el); });
-  }
-
-  /* ---- Cupom no celular: o recorte acompanha a picotagem ---- */
-  var coupon = $("#form"), cr = coupon.querySelector(".coupon__right");
-  function cut(){ coupon.style.setProperty("--cut", (cr.offsetTop + 2) + "px"); }
-  cut(); addEventListener("resize", cut); addEventListener("load", cut);
+  /* ---- Borda da nav ao rolar ---- */
+  var nav = $('#nav');
+  addEventListener('scroll', function(){ nav.classList.toggle('is-scrolled', scrollY > 8); }, { passive:true });
 
   /* ---- Pedido via WhatsApp ---- */
   var WA = '5512981759519';
@@ -670,7 +479,7 @@ footer{background:var(--k);color:#000;padding:clamp(5rem,9vw,8rem) var(--margin)
       sel('Modelo', ['Agenda personalizada','Caderno','Calendário de parede','Calendário de mesa']),
       sel('Ano', ['2027','2026'])
     ]),
-    outro: '<p class="dyn-note">Descreva o produto no campo Observações.</p>'
+    outro: '<p class="dyn-title">Descreva o produto no campo Observações.</p>'
   };
 
   function specs(){
@@ -683,23 +492,7 @@ footer{background:var(--k);color:#000;padding:clamp(5rem,9vw,8rem) var(--margin)
     return out.join(' | ');
   }
 
-  /* cartão ao vivo */
-  var lc = $('#livecard'), lcCo = $('#lcCo'), lcName = $('#lcName'), lcProd = $('#lcProd');
-  function live(){
-    lcCo.textContent = empresa.value.trim() || 'Sua marca aqui';
-    lcName.textContent = nome.value.trim() || 'Seu nome';
-    var p = psel.value ? psel.options[psel.selectedIndex].text : 'Cartão de visita';
-    lcProd.textContent = p + (qtd.value ? ' · ' + qtd.value + ' un.' : '');
-  }
-  document.querySelectorAll('.tones button').forEach(function(b){
-    b.addEventListener('click', function(){
-      lc.dataset.tone = b.dataset.t;
-      document.querySelectorAll('.tones button').forEach(function(o){ o.setAttribute('aria-pressed', o === b); });
-    });
-  });
-
-  psel.addEventListener('change', function(){ dbox.innerHTML = SPECS[psel.value] || ''; live(); });
-  [empresa, nome, qtd].forEach(function(el){ el.addEventListener('input', live); });
+  psel.addEventListener('change', function(){ dbox.innerHTML = SPECS[psel.value] || ''; });
 
   function marcar(el){
     el.classList.add('invalid');
@@ -712,11 +505,11 @@ footer{background:var(--k);color:#000;padding:clamp(5rem,9vw,8rem) var(--margin)
     e.preventDefault();
     var falta = [];
     if (!psel.value){ marcar(psel); falta.push('produto'); }
-    if (!qtd.value || +qtd.value < 1){ marcar(qtd); falta.push('quantidade'); }
     if (!nome.value.trim()){ marcar(nome); falta.push('nome'); }
+    if (!qtd.value || +qtd.value < 1){ marcar(qtd); falta.push('quantidade'); }
     if (falta.length){ msgEl.textContent = 'Falta preencher: ' + falta.join(', ') + '.'; return; }
     msgEl.textContent = '';
-    var sp = specs(), cor = { preto:'Preto', claro:'Branco', amarelo:'Amarelo', magenta:'Magenta' }[lc.dataset.tone], m = '';
+    var sp = specs(), m = '';
     m += '*NOVO PEDIDO – MultiGráfica Jacareí*\n\n';
     m += '*Cliente:* ' + nome.value.trim() + '\n';
     if (empresa.value.trim()) m += '*Empresa:* ' + empresa.value.trim() + '\n';
@@ -725,7 +518,6 @@ footer{background:var(--k);color:#000;padding:clamp(5rem,9vw,8rem) var(--margin)
     m += '*Quantidade:* ' + qtd.value + ' un.\n';
     m += '*Prazo:* ' + prazo.value + '\n';
     m += '*Arte:* ' + arte.value + '\n';
-    if (psel.value === 'cartao') m += '*Cor de fundo na prévia:* ' + cor + '\n';
     if (obs.value.trim()) m += '*Observações:* ' + obs.value.trim() + '\n';
     m += '\n_Pedido enviado pelo site_';
     window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(m), '_blank', 'noopener');
